@@ -19,7 +19,7 @@ function M.build(p)
     WinSeparator = { fg = p.border },
     StatusLine = { fg = p.fg_accent, bg = p.bg_shadow_intense },
     StatusLineNC = { fg = p.fg_shadow_subtle, bg = p.bg_shadow_subtle },
-    StatusLineTerm = { link = "StatusLine " },
+    StatusLineTerm = { link = "StatusLine" },
     StatusLineTermNC = { link = "StatusLineNC" },
     TabLine = { fg = p.fg_shadow_subtle, bg = p.bg_shadow_subtle },
     TabLineSel = { fg = p.fg_main, bg = p.bg_main, bold = true },
