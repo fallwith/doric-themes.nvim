@@ -4,6 +4,7 @@ function M.build(p)
   local groups = {
     Normal = { fg = p.fg_main, bg = p.bg_main },
     NormalNC = { fg = p.fg_main, bg = p.bg_main },
+    NormalFloat = { bg = p.bg_shadow_subtle },
     Cursor = { fg = p.bg_main, bg = p.cursor },
     CursorLine = { bg = p.bg_accent },
     CursorColumn = { bg = p.bg_shadow_subtle },
@@ -70,7 +71,6 @@ function M.build(p)
     Character = { fg = p.fg_shadow_subtle },
     Number = { fg = p.fg_main },
     Boolean = { fg = p.fg_main },
-    Float = { fg = p.fg_main },
     Identifier = { fg = p.fg_main, italic = true },
     Function = { fg = p.fg_shadow_intense },
     Statement = { fg = p.fg_shadow_intense, bold = true },
