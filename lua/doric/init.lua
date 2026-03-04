@@ -16,6 +16,7 @@ function M.load(name)
   end
 
   util.reset(resolved, palette.type)
+  util.set_terminal_colors(palette)
   util.apply_highlights(highlights.build(palette))
 end
 
