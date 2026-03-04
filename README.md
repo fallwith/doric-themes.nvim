@@ -22,6 +22,8 @@ From the original project:
 > of typographic features and subtleties in colour gradients to establish
 > a consistent rhythm.
 
+See the screenshots section for screenshots of all the colourscheme variants.
+
 ## Requirements
 
 Neovim >= 0.8.0
@@ -42,15 +44,13 @@ vim.pack.add({ "https://github.com/aymenhafeez/doric-themes.nvim" })
 
 ## Usage
 
-Example configuration:
-
-Set a specific variant, for example
+Set a specific variant, for example:
 
 ```lua
 vim.cmd "colorscheme doric-marble"
 ```
 
-Or use the configuration option to set a light and dark variant:
+Or use the configuration options to set a light and dark variant:
 
 ```lua
 require("doric").setup({
@@ -62,3 +62,149 @@ vim.cmd "colorscheme doric"
 ```
 
 These will then automatically sync with `vim.o.background`.
+
+## Screenshots
+
+### Light variants
+
+<details>
+<summary>doric-beach</summary>
+
+![doric-beach](media/doric-beach.png)
+
+</details>
+
+<details>
+<summary>doric-cherry</summary>
+
+![doric-cherry](media/doric-cherry.png)
+
+</details>
+
+<details>
+<summary>doric-earth</summary>
+
+![doric-earth](media/doric-earth.png)
+
+</details>
+
+<details>
+<summary>doric-jade</summary>
+
+![doric-jade](media/doric-jade.png)
+
+</details>
+
+<details>
+<summary>doric-light</summary>
+
+![doric-light](media/doric-light.png)
+
+</details>
+
+<details>
+<summary>doric-marble</summary>
+
+![doric-marble](media/doric-marble.png)
+
+</details>
+
+<details>
+<summary>doric-oak</summary>
+
+![doric-oak](media/doric-oak.png)
+
+</details>
+
+<details>
+<summary>doric-siren</summary>
+
+![doric-siren](media/doric-siren.png)
+
+</details>
+
+<details>
+<summary>doric-wind</summary>
+
+![doric-wind](media/doric-wind.png)
+
+</details>
+
+### Dark variants
+
+<details>
+<summary>doric-copper</summary>
+
+![doric-copper](media/doric-copper.png)
+
+</details>
+
+<details>
+<summary>doric-dark</summary>
+
+![doric-dark](media/doric-dark.png)
+
+</details>
+
+<details>
+<summary>doric-fire</summary>
+
+![doric-fire](media/doric-fire.png)
+
+</details>
+
+<details>
+<summary>doric-mermaid</summary>
+
+![doric-mermaid](media/doric-mermaid.png)
+
+</details>
+
+<details>
+<summary>doric-obsidian</summary>
+
+![doric-obsidian](media/doric-obsidian.png)
+
+</details>
+
+<details>
+<summary>doric-pine</summary>
+
+![doric-pine](media/doric-pine.png)
+
+</details>
+
+<details>
+<summary>doric-plum</summary>
+
+![doric-plum](media/doric-plum.png)
+
+</details>
+
+<details>
+<summary>doric-valley</summary>
+
+![doric-valley](media/doric-valley.png)
+
+</details>
+
+<details>
+<summary>doric-water</summary>
+
+![doric-water](media/doric-water.png)
+
+</details>
+
+## TODO
+
+* Support for more plugins
+* Style configuration options
+* Options to override highlight groups
+* Complementary themes for terminal emulators
+
+## Credit
+
+* [Doric themes](https://github.com/protesilaos/doric-themes) for the original
+  palette
+* [modus-theme.nvim](https://github.com/miikanissi/modus-themes.nvim/) for the
+  colourscheme file structure
