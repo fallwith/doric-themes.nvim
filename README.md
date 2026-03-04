@@ -22,7 +22,9 @@ From the original project:
 > of typographic features and subtleties in colour gradients to establish
 > a consistent rhythm.
 
-See the screenshots section for screenshots of all the colourscheme variants.
+See the
+[screenshots](https://github.com/aymenhafeez/doric-themes.nvim#screenshots)
+section for screenshots of all the colourscheme variants.
 
 ## Requirements
 
