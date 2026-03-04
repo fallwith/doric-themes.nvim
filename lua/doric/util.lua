@@ -15,7 +15,9 @@ function M.reset(name, background)
     vim.cmd("syntax reset")
   end
   vim.o.termguicolors = true
-  vim.o.background = background
+  if vim.o.background ~= background then
+    vim.o.background = background
+  end
   vim.g.colors_name = name
 end
 
