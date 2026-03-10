@@ -184,6 +184,9 @@ function M.build(p)
     fzf2 = { link = "StatusLine" },
     fzf3 = { link = "StatusLine" },
 
+    TreesitterContext = { bg = p.bg_main },
+    TreesitterContextLineNumber = { fg = p.fg_main, bg = p.bg_main, bold = true },
+
     WhichKey = { fg = p.fg_shadow_intense, bold = true },
     WhichKeyGroup = { fg = p.fg_shadow_subtle },
     WhichKeyDesc = { fg = p.fg_main },
