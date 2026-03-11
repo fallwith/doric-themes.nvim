@@ -1,4 +1,16 @@
+local config = require("doric.config")
 local M = {}
+
+local function apply_styles(spec, styles)
+  local styled = spec
+  if styles.italic == false and spec.italic then
+    styled = vim.tbl_extend("force", styled, { italic = false })
+  end
+  if styles.bold == false and spec.bold then
+    styled = vim.tbl_extend("force", styled, { bold = false })
+  end
+  return styled
+end
 
 function M.build(p)
   local groups = {
@@ -209,25 +221,25 @@ function M.build(p)
     NvimTreeImageFile = { fg = p.fg_shadow_subtle },
     NvimTreeSymlink = { fg = p.fg_shadow_intense },
 
-    ["@comment"] = { fg = p.fg_accent, italic = true },
-    ["@string"] = { fg = p.fg_shadow_subtle },
-    ["@number"] = { fg = p.fg_main },
-    ["@boolean"] = { fg = p.fg_main },
-    ["@function"] = { fg = p.fg_shadow_intense },
+    ["@comment"] = { link = "Comment" },
+    ["@string"] = { link = "String" },
+    ["@number"] = { link = "Number" },
+    ["@boolean"] = { link = "Boolean" },
+    ["@function"] = { link = "Function" },
     ["@function.builtin"] = { fg = p.fg_shadow_subtle, bold = true, italic = true },
-    ["@keyword"] = { fg = p.fg_shadow_intense, bold = true },
-    ["@keyword.return"] = { fg = p.fg_shadow_intense, bold = true },
-    ["@keyword.import"] = { fg = p.fg_shadow_intense, bold = true },
-    ["@keyword.directive"] = { fg = p.fg_shadow_intense, bold = true },
-    ["@keyword.directive.define"] = { fg = p.fg_shadow_intense, bold = true },
-    ["@type"] = { fg = p.fg_shadow_subtle, bold = true, italic = true },
+    ["@keyword"] = { link = "Keyword" },
+    ["@keyword.return"] = { link = "Keyword" },
+    ["@keyword.import"] = { link = "Keyword" },
+    ["@keyword.directive"] = { link = "Keyword" },
+    ["@keyword.directive.define"] = { link = "Keyword" },
+    ["@type"] = { link = "Type" },
     ["@type.builtin"] = { fg = p.fg_shadow_subtle, italic = true },
-    ["@type.definition"] = { fg = p.fg_shadow_subtle, bold = true, italic = true },
+    ["@type.definition"] = { link = "Type" },
     ["@variable"] = { fg = p.fg_main },
     ["@variable.builtin"] = { fg = p.fg_shadow_subtle, italic = true },
     ["@variable.parameter"] = { fg = p.fg_main, italic = true },
     ["@variable.member"] = { fg = p.fg_shadow_subtle },
-    ["@constant"] = { fg = p.fg_main },
+    ["@constant"] = { link = "Constant" },
     ["@constant.builtin"] = { fg = p.fg_shadow_subtle },
     ["@constant.macro"] = { fg = p.fg_shadow_subtle },
     ["@punctuation.delimiter"] = { fg = p.fg_main },
@@ -258,6 +270,13 @@ function M.build(p)
     ["@diff.delta"] = { fg = p.fg_yellow },
     ["@comment.todo"] = { fg = p.fg_yellow, bold = true },
   }
+
+  local styles = config.options().styles or {}
+  for group, spec in pairs(groups) do
+    if type(spec) == "table" then
+      groups[group] = apply_styles(spec, styles)
+    end
+  end
 
   return groups
 end
