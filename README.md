@@ -52,18 +52,28 @@ Set a specific variant, for example:
 vim.cmd "colorscheme doric-marble"
 ```
 
-Or use the configuration options to set a light and dark variant:
+The colorscheme also comes with some configurable options:
 
 ```lua
 require("doric").setup({
-  light = "doric-light", -- doric-beach, -cherry, -earth, -jade, -marble, -oak, -siren, -wind
-  dark = "doric-water" -- doric-copper, -dark, -fire, -mermaid, -obsidian, -pine, -plum, -valley
+  -- set a default light and dark variant
+  -- these will automatically sync with vim.o.background
+  light = "doric-light",
+  dark = "doric-dark",
+  -- enable/disable italic and bold styles
+  -- enabled by default
+  styles = {
+    italic = true,
+    bold = true,
+  },
 })
 
 vim.cmd "colorscheme doric"
 ```
 
-These will then automatically sync with `vim.o.background`.
+Setting `vim.cmd "colorscheme doric"` without calling `setup()` will use
+`doric-light` and `doric-dark` by default. Similarly, both italic and bold
+styles will enabled.
 
 ## Screenshots
 
